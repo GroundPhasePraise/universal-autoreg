@@ -1,6 +1,6 @@
 # 🩸 UNIVERSAL AUTOREG — универсальный авторег с дашбордом
 
-Единый пульт для **17 проверенных авторег-провайдеров**: ChatGPT-панели, Notion, AWS Kiro, Conol, llmtr, miarouter, xkiro, vani, terrapolis, type.com, gname, omnirush, TokenHarbor, treg, BeatAPI, CleanApis + GitHub device-flow.
+Единый пульт для **18 проверенных авторег-провайдеров**: ChatGPT-панели, Notion, AWS Kiro, Conol, llmtr, miarouter, xkiro, vani, terrapolis, type.com, gname, omnirush, TokenHarbor, treg, BeatAPI, CleanApis, GitHub device-flow + 2nd-no.com SMS (phone-гейты).
 
 **Всё battle-tested** (октябрь 2026): каждый провайдер — реальный рабочий скрипт с реальной конверсией, а не теория. Секретов в репе нет — ключи в `config.json` (gitignored).
 
@@ -18,7 +18,7 @@ cp config.example.json config.json   # заполнить ключи
 ```
 universal-autoreg/
 ├── dashboard.py        # пульт (stdlib http.server, порт 8900): запуск волн, логи, банк, здоровье инфры
-├── providers.json      # манифест 17 провайдеров: таргет, auth, капча, почта, прокси, награда, питфолы
+├── providers.json      # манифест 18 провайдеров: таргет, auth, капча, почта, прокси, награда, питфолы
 ├── providers/          # 19 рабочих скриптов (контракт: python providers/X.py N)
 ├── lib/
 │   ├── bank.py         # JSONL-банк аккаунтов: дедуп (provider,email), статистика
@@ -38,6 +38,7 @@ universal-autoreg/
 | `beatapi_oauth` | beatapi.io | 250K quota, 43 модели | нет |
 | `cleanapis_oauth` | cleanapis.com | free Starter, claude-opus-5 | нет |
 | `xkiro_tg_verify` | xkiro.com | 30M/30д + 1M daily | нет (TG-бот) |
+| `secondno_sms` | 2nd-no.com | 3 free PL номера/акк (SMS OTP-мост) | Turnstile (sidecar FREE) |
 | `treg_github_grant` | treg.to | $1 grant/акк | нет |
 | `llmtr_turnstile` | llmtr.com | free-пул haiku/deepseek/qwen | Turnstile **FREE** |
 | `conol_register` | conol.ai | 600 кредитов/19с/$0 | reCAPTCHA v3 **FREE** |

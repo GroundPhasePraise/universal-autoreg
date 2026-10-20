@@ -84,3 +84,14 @@ python dashboard.py   # http://127.0.0.1:8900
 - **Camoufox** — Firefox-антидетект (abliteration, conol), headless OK, headed ломался.
 - **Patchright** — Chromium без CDP-флагов.
 - Scrapling/Obscura — scraping-стек.
+
+
+## 8. 2nd-no.com SMS (secondno_sms)
+
+- Провайдер: providers/secondno_sms.py, пакет lib/secondno/ (client 2no.pl JSON-RPC + captcha).
+- Data: SECONDNO_HOME (default <repo>/data/secondno) — state.json (акки+номера), captcha_keys.json.
+- Ключ 2captcha: env TWOCAPTCHA_API_KEY или data/secondno/captcha_keys.json; при живом sidecar :8877 он приоритетен (FREE, real_page).
+- Резерв номера может требовать Turnstile-токен (сайт 2nd-no.com за Cloudflare, sitekey 0x4AAAAAAAh6YYTPTzEcN3Ep; submit СТРОГО in.php для 2captcha).
+- Логин-стена = React SPA: playwright (Python 3.11, PYTHONPATH="" на Windows).
+- Режимы: N [--gmail] (рега акков), reserve <email> <pass> <reserve_file> <code_file> [timeout] [min_ts] (REUSE-FIRST OTP-мост для phone-гейтов других провайдеров), accounts (дамп).
+- Лимит: 3 номера/акк/3 дня, продлеваются при получении SMS. Free-пул выжжен под TG — только веб-сервисы с мягким VOIP-фильтром.
