@@ -1,0 +1,7 @@
+# Зависимости провайдеров (dashboard и lib/ — чистый stdlib)
+requests>=2.31
+httpx>=0.27
+playwright>=1.44
+pyotp>=2.9
+websocket-client>=1.7
+curl_cffi>=0.7

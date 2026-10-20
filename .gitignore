@@ -1,0 +1,11 @@
+config.json
+data/bank.jsonl
+data/working_mails.txt
+data/proxies.db
+data/proxies.txt
+data/gh_accounts.json
+data/email_state.json
+logs/
+__pycache__/
+*.session
+*.session-journal

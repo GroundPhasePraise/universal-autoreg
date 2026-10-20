@@ -1,0 +1,20 @@
+{
+  "_comment": "Скопируй в config.json и заполни. config.json в .gitignore — секреты не коммитить.",
+  "twocaptcha_key": "ТВОЙ_КЛЮЧ_2CAPTCHA (fallback когда sidecar не справляется; баланс: POST api.2captcha.com/res.php action=getbalance)",
+  "twocaptcha_fallback": true,
+  "tonline_imap": {
+    "host": "secureimap.t-online.de",
+    "user": "imap-login (обычно = email)",
+    "password": "IMAP-пароль t-online"
+  },
+  "gmail_imap": {
+    "user": "твой@gmail.com",
+    "password": "app-password (16 символов, не основной пароль)"
+  },
+  "sidecar": "http://127.0.0.1:8877",
+  "cdp_chrome": "http://127.0.0.1:9222 (chrome --remote-debugging-port=9222 --remote-allow-origins=* — ОБЯЗАТЕЛЬНО с allow-origins, иначе Handshake 403)",
+  "notes": {
+    "python": "провайдеры на Playwright/Camoufox требуют Python 3.11: UA_PYTHON=C:/.../Python311/python.exe",
+    "pythonpath": "на Windows запускать с PYTHONPATH='' (venv-загрязнение ломает camoufox/playwright)"
+  }
+}
